@@ -1,7 +1,3 @@
-Voici ton texte corrigé et mis en forme :  
-
----
-
 # IA_Embarqué  
 **Projet collaboratif**  
 
