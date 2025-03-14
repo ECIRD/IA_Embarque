@@ -1,5 +1,9 @@
 # IA_Embarqué  
-**Projet collaboratif**  
+**Projet collaboratif**
+
+## Collaborateurs
+- Hugo CELARIE
+- Pablo COLIN
 
 ## Arborescence  
 
