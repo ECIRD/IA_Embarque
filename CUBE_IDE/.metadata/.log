@@ -330,3 +330,22 @@ java.lang.NullPointerException: Cannot invoke "com.st.stm32cube.ide.mcu.external
 	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
 	at org.eclipse.ui.internal.Workbench$39.run(Workbench.java:2762)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-03-14 11:42:52.989 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  C:\Users\hugoc\OneDrive\Documents\Hugo\ISMIN\Cours\S8\Ia_Data\IA_embarque\Github\IA_Embarque\CUBE_IDE\IA_Emb_Pablo_Hugo\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\hugoc\OneDrive\Documents\Hugo\ISMIN\Cours\S8\Ia_Data\IA_embarque\Github\IA_Embarque\CUBE_IDE\IA_Emb_Pablo_Hugo\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-03-14 11:43:10.302
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-03-14 11:43:10.315
+!MESSAGE Log4j2 initialized with config file C:\Users\hugoc\OneDrive\Documents\Hugo\ISMIN\Cours\S8\Ia_Data\IA_embarque\Github\IA_Embarque\CUBE_IDE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-03-14 11:43:25.937
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-03-14 11:43:42.298
+!MESSAGE Indexed 'IA_Emb_Pablo_Hugo' (38 sources, 141 headers) in 13.7 sec: 17,064 declarations; 103,261 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0.14%)
