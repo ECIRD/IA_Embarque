@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TP1_IA_Emb/IA_Emb_Pablo_Hugo.ioc&apos; to &apos;TP1_IA_Emb.ioc&apos;" description="Rename resource &apos;IA_Emb_Pablo_Hugo.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="IA_Emb_Pablo_Hugo.ioc" name="TP1_IA_Emb.ioc" stamp="1742546472386" updateReferences="true"/>
+</session>

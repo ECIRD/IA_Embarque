@@ -1,0 +1,10 @@
+10:49:55 **** Incremental Build of configuration Debug for project TP1_IA_Emb ****
+make -j8 all 
+arm-none-eabi-size  TP1_IA_Emb.elf 
+   text	   data	    bss	    dec	    hex	filename
+  78916	   2444	   7128	  88488	  159a8	TP1_IA_Emb.elf
+Finished building: default.size.stdout
+ 
+
+10:49:58 Build Finished. 0 errors, 0 warnings. (took 2s.752ms)
+

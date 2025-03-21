@@ -1,0 +1,13 @@
+../X-CUBE-AI/App/model_v1.c:443:9:model_v1_configure_activations	2
+../X-CUBE-AI/App/model_v1.c:480:9:model_v1_configure_weights	2
+../X-CUBE-AI/App/model_v1.c:525:9:ai_model_v1_get_info	4
+../X-CUBE-AI/App/model_v1.c:572:9:ai_model_v1_get_report	4
+../X-CUBE-AI/App/model_v1.c:619:10:ai_model_v1_get_error	1
+../X-CUBE-AI/App/model_v1.c:626:10:ai_model_v1_create	1
+../X-CUBE-AI/App/model_v1.c:637:10:ai_model_v1_create_and_init	8
+../X-CUBE-AI/App/model_v1.c:672:12:ai_model_v1_inputs_get	2
+../X-CUBE-AI/App/model_v1.c:683:12:ai_model_v1_outputs_get	2
+../X-CUBE-AI/App/model_v1.c:694:11:ai_model_v1_destroy	1
+../X-CUBE-AI/App/model_v1.c:701:9:ai_model_v1_init	2
+../X-CUBE-AI/App/model_v1.c:718:8:ai_model_v1_run	1
+../X-CUBE-AI/App/model_v1.c:726:8:ai_model_v1_forward	1
