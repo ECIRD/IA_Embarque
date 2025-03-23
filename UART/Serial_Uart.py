@@ -18,7 +18,7 @@ def find_available_port():
     print("Port trouvé:", ports[0].device)
     return ports[0].device  # Retourne le premier port trouvé (ex: 'COM3')
 
-PORT = find_available_port()  # Détecte automatiquement le port "/dev/tty.usbmodem1422303"
+PORT = find_available_port()  # Détecte automatiquement le port oumettre à la main le bon
 
 
 

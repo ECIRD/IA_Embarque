@@ -1,25 +1,141 @@
-# IA_Embarqué  
-**Projet collaboratif**
 
-## Collaborateurs
+
+# 🧠 IA Embarquée  
+**Projet collaboratif de déploiement de modèle d’intelligence artificielle sur STM32**
+
+---
+
+## 👥 Collaborateurs
+
+- Hugo CELARIE  
+- Pablo COLIN  
+
+---
+
+## 📁 Arborescence du Dépôt
+
+Ce dépôt GitHub est structuré comme suit :
+
+- `COLAB/`  
+  - Notebook Jupyter `TP_IA_EMBARQUEE.ipynb`  
+  - Modèle MLP entraîné exporté au format `.h5`  
+  - Données d'entraînement au format `.csv`  
+  - Données de test/validation au format `.npy`  
+
+- `UART/`  
+  - Script Python `Serial_Uart.py` pour lire les données UART
+
+- `CUBE_IDE/`  
+  - `.metadata/` : fichiers internes du workspace CubeIDE  
+  - `IA_Emb_Pablo_Hugo/` : projet CubeIDE contenant l’implémentation STM32  
+  - `IA_Emb_Pablo_Hugo.zip` : archive compressée du projet  
+
+- `Images/`  
+  - Captures d’écran illustrant les différentes étapes de développement pour la rédaction du rapport final  
+
+---
+
+## 📘 Manuel d’Utilisation
+
+Pour plus de détails sur l'intégration complète du modèle et sa mise en œuvre sur une carte STM32, veuillez vous référer au **Rapport IA Embarquée** fourni dans le dépôt.
+
+---
+
+### 🔬 Entraînement et Export du Modèle (via Google Colab)
+
+1. **Chargement des données**  
+   Assurez-vous de spécifier le chemin de vos données dans le notebook :
+
+   ```python
+   file_path = "/content/drive/MyDrive/Colab Notebooks/data/ai4i2020.csv"
+   ```
+
+2. **Exécution complète du notebook**  
+   Lancez l’exécution de toutes les cellules du notebook pour prétraiter les données, entraîner le modèle et le sauvegarder.
+
+3. **Export du modèle et des jeux de données**  
+   À la fin du notebook, vous pouvez exporter les fichiers nécessaires à l’inférence embarquée :
+
+   ```python
+   np.save("X_test.npy", X_test)
+   np.save("Y_test.npy", Y_test)
+   model.save("Model_V1.h5")
+   ```
+
+---
+
+### 🛠️ Implémentation sur Carte STM32 (via STM32CubeIDE)
+
+Ce projet est conçu pour fonctionner avec une carte STM32 utilisant **STM32CubeIDE** et **X-CUBE-AI**.
+
+#### Étapes :
+
+1. Ouvrez le fichier `.ioc` via STM32CubeIDE.
+
+2. Allez dans l’onglet **X-CUBE-AI**, importez le modèle `Model_V1.h5` en mode **Keras**, puis testez l’inférence directement avec les données `X_test.npy`.
+
+3. Configurez l’interface UART2 avec un débit de **115200 bit/s**.
+
+4. Dans le fichier `/X-CUBE-AI/App/app_x-cube-ai.c`, ajoutez/modifiez les définitions suivantes :
+
+   ```c
+   /* USER CODE BEGIN includes */
+   extern UART_HandleTypeDef huart2;
+
+   #define BYTES_IN_FLOATS 5*4
+   #define TIMEOUT 1000
+   #define SYNCHRONISATION 0xAB
+   #define ACKNOWLEDGE 0xCD
+   #define CLASS_NUMBER 5
+
+   void synchronize_UART(void);
+   /* USER CODE END includes */
+   ```
+
+5. Compilez et lancez le **mode Debug** dans CubeIDE pour déployer le firmware sur la carte.
+
+---
+
+### 🔄 Communication UART avec le script Python
+
+Le script `Serial_Uart.py` permet de lire les sorties envoyées par la carte STM32 via UART.
+
+#### Étapes :
+
+1. Définissez le port série utilisé (automatique ou manuel). Par exemple, pour le port COM5 :
+
+   ```python
+   PORT = "COM5"
+   ```
+
+2. Chargez les données de validation :
+
+   ```python
+   X_test = np.load("../COLAB/X_test.npy")
+   Y_test = np.load("../COLAB/Y_test.npy")
+   ```
+
+3. Lancez le script : les informations s'affichent dans le terminal, notamment :
+
+   - `Iteration` : numéro d’itération
+   - `Expected output` : sortie attendue
+   - `Received output` : sortie prédite par la STM32
+   - `Accuracy` : précision estimée du modèle en temps réel
+
+---
+
+# Rapport IA Embarquée
+
 - Hugo CELARIE
 - Pablo COLIN
 
-## Arborescence  
+## Plan
+1. **Analyse du probleme**
+2. **Mise en place et analyse d'un modele d'IA**
+3. **Implémentation sous cube IDE**
+4. **Connexion UART**
+5. **Analyse des resultats**
 
-Ce GitHub est organisé de la manière suivante :  
-- Un répertoire **COLAB** contenant :  
-    - Le Jupyter Notebook au format **.ipynb**  
-    - Le modèle MLP exporté au format **.h5**  
-    - Les données d'entraînement au format **.csv**  
-    - Les données de validation au format **.npy**  
-- Un répertoire **UART** contenant :  
-    - Un script Python au format **.py** permettant de lire les données reçues via un port UART  
-- Un répertoire **CUBE_IDE** contenant :  
-    - Un répertoire **.metadata** pour gérer les logs du workspace  
-    - Un répertoire **IA_Emb_Pablo_Hugo** contenant le projet CubeIDE  
+## 1. Analyse du probleme
 
-## Problèmes  
-
-
----
+L'objectif du projet est de developper

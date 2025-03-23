@@ -2150,3 +2150,18 @@ Caused by: java.nio.channels.UnresolvedAddressException
 	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
 	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:185)
 	... 21 more
+!SESSION 2025-03-23 14:31:23.260 -----------------------------------------------
+eclipse.buildId=Version 1.16.0
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2025-03-23 14:31:45.499
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2025-03-23 14:31:45.517
+!MESSAGE Log4j2 initialized with config file C:\Users\hugoc\OneDrive\Documents\Hugo\ISMIN\Cours\S8\Ia_Data\IA_embarque\Github\IA_Embarque\CUBE_IDE\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2025-03-23 14:32:05.050
+!MESSAGE Started RMI Server, listening on port 41337
