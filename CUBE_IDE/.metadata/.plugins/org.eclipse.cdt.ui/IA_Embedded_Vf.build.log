@@ -1,10 +1,10 @@
-11:04:34 **** Incremental Build of configuration Debug for project IA_Embedded_Vf ****
+11:19:33 **** Incremental Build of configuration Debug for project IA_Embedded_Vf ****
 make -j8 all 
 arm-none-eabi-size  IA_Embedded_Vf.elf 
    text	   data	    bss	    dec	    hex	filename
-  78916	   2444	   7128	  88488	  159a8	IA_Embedded_Vf.elf
+  63632	   2444	   7128	  73204	  11df4	IA_Embedded_Vf.elf
 Finished building: default.size.stdout
  
 
-11:04:37 Build Finished. 0 errors, 0 warnings. (took 2s.577ms)
+11:19:36 Build Finished. 0 errors, 0 warnings. (took 3s.0ms)
 

@@ -37,7 +37,7 @@ Ce dépôt GitHub est structuré comme suit :
 
 ## 📘 Manuel d’Utilisation
 
-Pour plus de détails sur l'intégration complète du modèle et sa mise en œuvre sur une carte STM32, veuillez vous référer au **Rapport IA Embarquée** fourni dans le dépôt.
+Pour plus de détails sur l'intégration complète du modèle et sa mise en œuvre sur une carte STM32, veuillez vous référer au **Rapport IA Embarquée** ci-dessous.
 
 ---
 
@@ -92,7 +92,22 @@ Ce projet est conçu pour fonctionner avec une carte STM32 utilisant **STM32Cube
    /* USER CODE END includes */
    ```
 
-5. Compilez et lancez le **mode Debug** dans CubeIDE pour déployer le firmware sur la carte.
+5. Dans le fichier `CUBE_IDE/IA_Embedded_Vf/Core/Src/main.c` modifier les initialisation des fonction MX en enlevant l'initialisation de la fonction `MX_SDMMC1_SD_Init()` pour obtenir les initialisations suivantes:
+```c
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_FMC_Init();
+  MX_I2C1_Init();
+  MX_SAI1_Init();
+  //MX_SDMMC1_SD_Init();
+  MX_SPI2_Init();
+  MX_USART2_UART_Init();
+  MX_USART3_UART_Init();
+  MX_USB_OTG_FS_PCD_Init();
+  MX_X_CUBE_AI_Init();
+```
+
+6. Compilez et lancez le **mode Debug** dans CubeIDE pour déployer le firmware sur la carte.
 
 ---
 
@@ -129,6 +144,9 @@ Le script `Serial_Uart.py` permet de lire les sorties envoyées par la carte STM
 - Hugo CELARIE
 - Pablo COLIN
 
+
+L'objectif du projet est de developper un modéle d'IA faissant de la prédiction de maintenance puis d'implementer ce modele sur une carte **STM32R9**.
+
 ## Plan
 1. **Analyse du probleme**
 2. **Mise en place et analyse d'un modele d'IA**
@@ -138,4 +156,14 @@ Le script `Serial_Uart.py` permet de lire les sorties envoyées par la carte STM
 
 ## 1. Analyse du probleme
 
-L'objectif du projet est de developper
+Nous partons d'une base de données organisée de la façon suivante:
+
+UDI|Product ID|Type|Air temperature [K]|Process temperature [K]|Rotational speed [rpm]|Torque [Nm]|Tool wear [min]|Machine failure|TWF|HDF|PWF|OSF|RNF|
+|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
+*int*|*string*|*string*|*float*|*float*|*int*|*float*|*int*|*int*|*int*|*int*|*int*|*int*|*int*|
+
+Où TWF, HDF, PWF, OSF et RNF sont des types d'erreur de production.
+
+Notre but étant de prédire les maintenances, nous allons devoir prendre en compte les différents types de problèmes ainsi que les paramètres des machines au moment du problème et le type de produit pour essayer de trouver une corrélation.
+
+## 2. Mise en place et analyse d'un modele d'IA

@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    model_v1_data.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    2025-03-21T09:44:10+0100
+  * @date    2025-03-24T11:18:21+0100
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * Copyright (c) 2025 STMicroelectronics.
@@ -32,7 +32,7 @@ AI_DEPRECATED
 AI_API_DECLARE_BEGIN
 
 
-extern const ai_u64 s_model_v1_weights_array_u64[4515];
+extern const ai_u64 s_model_v1_weights_array_u64[1843];
 
 
 

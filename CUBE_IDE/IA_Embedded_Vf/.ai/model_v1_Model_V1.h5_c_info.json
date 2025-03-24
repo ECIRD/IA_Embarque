@@ -15,7 +15,7 @@
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
-      "name": "dense_4_dense_bias_array",
+      "name": "dense_12_dense_bias_array",
       "nbits": 32,
       "offset_start": 1280,
       "qmn": {},
@@ -42,9 +42,9 @@
       "intq": {},
       "is_param": false,
       "mpool_id": 0,
-      "name": "dense_4_dense_output_array",
+      "name": "dense_12_dense_output_array",
       "nbits": 32,
-      "offset_start": 256,
+      "offset_start": 128,
       "qmn": {},
       "shape": [
         64
@@ -69,7 +69,7 @@
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
-      "name": "dense_4_dense_weights_array",
+      "name": "dense_12_dense_weights_array",
       "nbits": 32,
       "offset_start": 0,
       "qmn": {},
@@ -98,9 +98,9 @@
       "intq": {},
       "is_param": false,
       "mpool_id": 0,
-      "name": "dense_4_output_array",
+      "name": "dense_12_output_array",
       "nbits": 32,
-      "offset_start": 256,
+      "offset_start": 128,
       "qmn": {},
       "shape": [
         64
@@ -125,17 +125,17 @@
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
-      "name": "dense_5_dense_bias_array",
+      "name": "dense_13_dense_bias_array",
       "nbits": 32,
-      "offset_start": 17920,
+      "offset_start": 9728,
       "qmn": {},
       "shape": [
-        64
+        32
       ],
       "shape_map": [
         "CH"
       ],
-      "size_bytes": 256
+      "size_bytes": 128
     },
     {
       "alignment": 4,
@@ -152,17 +152,17 @@
       "intq": {},
       "is_param": false,
       "mpool_id": 0,
-      "name": "dense_5_dense_output_array",
+      "name": "dense_13_dense_output_array",
       "nbits": 32,
       "offset_start": 0,
       "qmn": {},
       "shape": [
-        64
+        32
       ],
       "shape_map": [
         "CH"
       ],
-      "size_bytes": 256
+      "size_bytes": 128
     },
     {
       "alignment": 4,
@@ -179,19 +179,19 @@
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
-      "name": "dense_5_dense_weights_array",
+      "name": "dense_13_dense_weights_array",
       "nbits": 32,
       "offset_start": 1536,
       "qmn": {},
       "shape": [
-        64,
+        32,
         64
       ],
       "shape_map": [
         "CH",
         "CH_IN"
       ],
-      "size_bytes": 16384
+      "size_bytes": 8192
     },
     {
       "alignment": 4,
@@ -208,17 +208,17 @@
       "intq": {},
       "is_param": false,
       "mpool_id": 0,
-      "name": "dense_5_output_array",
+      "name": "dense_13_output_array",
       "nbits": 32,
-      "offset_start": 256,
+      "offset_start": 128,
       "qmn": {},
       "shape": [
-        64
+        32
       ],
       "shape_map": [
         "CH"
       ],
-      "size_bytes": 256
+      "size_bytes": 128
     },
     {
       "alignment": 4,
@@ -235,17 +235,17 @@
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
-      "name": "dense_6_dense_bias_array",
+      "name": "dense_14_dense_bias_array",
       "nbits": 32,
-      "offset_start": 34560,
+      "offset_start": 13952,
       "qmn": {},
       "shape": [
-        64
+        32
       ],
       "shape_map": [
         "CH"
       ],
-      "size_bytes": 256
+      "size_bytes": 128
     },
     {
       "alignment": 4,
@@ -262,17 +262,17 @@
       "intq": {},
       "is_param": false,
       "mpool_id": 0,
-      "name": "dense_6_dense_output_array",
+      "name": "dense_14_dense_output_array",
       "nbits": 32,
       "offset_start": 0,
       "qmn": {},
       "shape": [
-        64
+        32
       ],
       "shape_map": [
         "CH"
       ],
-      "size_bytes": 256
+      "size_bytes": 128
     },
     {
       "alignment": 4,
@@ -289,19 +289,19 @@
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
-      "name": "dense_6_dense_weights_array",
+      "name": "dense_14_dense_weights_array",
       "nbits": 32,
-      "offset_start": 18176,
+      "offset_start": 9856,
       "qmn": {},
       "shape": [
-        64,
-        64
+        32,
+        32
       ],
       "shape_map": [
         "CH",
         "CH_IN"
       ],
-      "size_bytes": 16384
+      "size_bytes": 4096
     },
     {
       "alignment": 4,
@@ -318,17 +318,17 @@
       "intq": {},
       "is_param": false,
       "mpool_id": 0,
-      "name": "dense_6_output_array",
+      "name": "dense_14_output_array",
       "nbits": 32,
-      "offset_start": 256,
+      "offset_start": 128,
       "qmn": {},
       "shape": [
-        64
+        32
       ],
       "shape_map": [
         "CH"
       ],
-      "size_bytes": 256
+      "size_bytes": 128
     },
     {
       "alignment": 4,
@@ -345,9 +345,9 @@
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
-      "name": "dense_7_dense_bias_array",
+      "name": "dense_15_dense_bias_array",
       "nbits": 32,
-      "offset_start": 36096,
+      "offset_start": 14720,
       "qmn": {},
       "shape": [
         5
@@ -372,7 +372,7 @@
       "intq": {},
       "is_param": false,
       "mpool_id": 0,
-      "name": "dense_7_dense_output_array",
+      "name": "dense_15_dense_output_array",
       "nbits": 32,
       "offset_start": 0,
       "qmn": {},
@@ -399,19 +399,19 @@
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
-      "name": "dense_7_dense_weights_array",
+      "name": "dense_15_dense_weights_array",
       "nbits": 32,
-      "offset_start": 34816,
+      "offset_start": 14080,
       "qmn": {},
       "shape": [
         5,
-        64
+        32
       ],
       "shape_map": [
         "CH",
         "CH_IN"
       ],
-      "size_bytes": 1280
+      "size_bytes": 640
     },
     {
       "alignment": 4,
@@ -428,7 +428,7 @@
       "intq": {},
       "is_param": false,
       "mpool_id": 0,
-      "name": "dense_7_output_array",
+      "name": "dense_15_output_array",
       "nbits": 32,
       "offset_start": 20,
       "qmn": {},
@@ -457,7 +457,7 @@
       "mpool_id": 0,
       "name": "input_0_output_array",
       "nbits": 32,
-      "offset_start": 236,
+      "offset_start": 108,
       "qmn": {},
       "shape": [
         5
@@ -470,44 +470,44 @@
   ],
   "environment": {
     "generated_model": {
-      "generated_time": "2025-03-21T09:44:10+0100",
+      "generated_time": "2025-03-24T11:11:55+0100",
       "model_files": [
         {
           "name": "model_v1_data_params.h",
-          "signature": "0xb7ba1fe05b520a9b242ca0adb2898f13"
+          "signature": "0xd730dd5dbf3216de337385d8dad19530"
         },
         {
           "name": "model_v1_data_params.c",
-          "signature": "0xef1705f7b9486648db64e9dcb5234cd8"
+          "signature": "0xd8087b9e14df57cd36e826d43eeecada"
         },
         {
           "name": "model_v1_data.h",
-          "signature": "0x7dba30c8d34f44312539a6be9cbc03a5"
+          "signature": "0x4a6050800b966795e91da81f526cf3da"
         },
         {
           "name": "model_v1_data.c",
-          "signature": "0x375d61546f5e536b81358d6d9c025adb"
+          "signature": "0xd09e255fdae41da1952816e4ca2041b9"
         },
         {
           "name": "model_v1_config.h",
-          "signature": "0x2b15e9c2901d2a5137e9366965dd30a9"
+          "signature": "0x2435e6eb530f9378c6979ea0ec1d3ac2"
         },
         {
           "name": "model_v1.h",
-          "signature": "0x4a7995e571d4b1b0c148650f5fd7dd5e"
+          "signature": "0x3a69de27b318cac7478fbba14f238355"
         },
         {
           "name": "model_v1.c",
-          "signature": "0x8b00ce183207b1af0b82ce51936e13a3"
+          "signature": "0xaaf44e0581c434c6813b50ac814f6201"
         }
       ],
       "name": "model_v1"
     },
-    "network_signature": "0x361c7ddc30403ecb",
+    "network_signature": "0x6c0752fa5c790d7a",
     "test_name": "",
     "tools": [
       {
-        "arguments": "generate --target stm32l4 --name model_v1 -m C:/Users/hugoc/OneDrive/Documents/Hugo/ISMIN/Cours/S8/Ia_Data/IA_embarque/Github/IA_Embarque/COLAB/Model_V1.h5 --compression none --verbosity 1 --workspace C:/Users/hugoc/AppData/Local/Temp/mxAI_workspace43413117921004060407088970337315 --output C:/Users/hugoc/.stm32cubemx/model_v1_output",
+        "arguments": "generate --target stm32l4 --name model_v1 -m C:/Users/hugoc/OneDrive/Documents/Hugo/ISMIN/Cours/S8/Ia_Data/IA_embarque/Github/IA_Embarque/COLAB/Model_V1.h5 --compression none --verbosity 1 --workspace C:/Users/hugoc/AppData/Local/Temp/mxAI_workspace959563328150016327808042507440200 --output C:/Users/hugoc/.stm32cubemx/model_v1_output",
         "environment": [
           "STATS_TYPE=X-CUBE-AI"
         ],
@@ -515,12 +515,12 @@
           "model_files": [
             {
               "name": "Model_V1.h5",
-              "signature": "0x2ac21b7b6d50788773a4495e0a84f8a1"
+              "signature": "0xace2550a0d0386ea8fb7079c05766e9b"
             }
           ],
-          "n_params": 9029,
+          "n_params": 3685,
           "name": "Model_V1",
-          "size": 36116,
+          "size": 14740,
           "type": "keras"
         },
         "name": "ST.EdgeAI.Core",
@@ -650,7 +650,7 @@
           ],
           "macc": 384,
           "mapping": "NODE_SW",
-          "name": "dense_4_dense",
+          "name": "dense_12_dense",
           "original_nodes": [
             "0"
           ],
@@ -674,7 +674,7 @@
           ],
           "macc": 64,
           "mapping": "NODE_SW",
-          "name": "dense_4",
+          "name": "dense_12",
           "original_nodes": [
             "0"
           ],
@@ -689,7 +689,7 @@
         },
         {
           "attributes": {
-            "num_units": "64",
+            "num_units": "32",
             "use_bias": "True"
           },
           "description": "Dense",
@@ -699,9 +699,9 @@
             97,
             100
           ],
-          "macc": 4160,
+          "macc": 2080,
           "mapping": "NODE_SW",
-          "name": "dense_5_dense",
+          "name": "dense_13_dense",
           "original_nodes": [
             "2"
           ],
@@ -723,9 +723,9 @@
           "inputs": [
             79
           ],
-          "macc": 640,
+          "macc": 320,
           "mapping": "NODE_SW",
-          "name": "dense_5",
+          "name": "dense_13",
           "original_nodes": [
             "2"
           ],
@@ -740,7 +740,7 @@
         },
         {
           "attributes": {
-            "num_units": "64",
+            "num_units": "32",
             "use_bias": "True"
           },
           "description": "Dense",
@@ -750,9 +750,9 @@
             103,
             106
           ],
-          "macc": 4160,
+          "macc": 1056,
           "mapping": "NODE_SW",
-          "name": "dense_6_dense",
+          "name": "dense_14_dense",
           "original_nodes": [
             "4"
           ],
@@ -774,9 +774,9 @@
           "inputs": [
             83
           ],
-          "macc": 640,
+          "macc": 320,
           "mapping": "NODE_SW",
-          "name": "dense_6",
+          "name": "dense_14",
           "original_nodes": [
             "4"
           ],
@@ -801,9 +801,9 @@
             109,
             112
           ],
-          "macc": 325,
+          "macc": 165,
           "mapping": "NODE_SW",
-          "name": "dense_7_dense",
+          "name": "dense_15_dense",
           "original_nodes": [
             "6"
           ],
@@ -829,7 +829,7 @@
           ],
           "macc": 75,
           "mapping": "NODE_SW",
-          "name": "dense_7",
+          "name": "dense_15",
           "original_nodes": [
             "6"
           ],
@@ -853,7 +853,7 @@
       ],
       "original_outputs": [
         {
-          "dense_7": {
+          "dense_15": {
             "data_type": "float32",
             "shape": "(BATCH: None, CH: 5)"
           }
@@ -866,7 +866,7 @@
   ],
   "json_schema_version": "2.0",
   "memory_footprint": {
-    "activations": 512,
+    "activations": 384,
     "io": [
       0,
       0
@@ -877,7 +877,7 @@
     "toolchain": "arm-none-eabi-gcc (GNU Tools for STM32 12.3.rel1.20240612-1315) 12.3.1 20230626",
     "toolchain_flash": 1468,
     "toolchain_ram": 12,
-    "weights": 36116
+    "weights": 14740
   },
   "memory_pools": [
     {
@@ -906,7 +906,7 @@
       "rights": "ACC_WRITE",
       "size_bytes": -1,
       "subpools": [],
-      "used_size_bytes": 512,
+      "used_size_bytes": 384,
       "user_allocated": false,
       "virtual": false
     },
@@ -935,7 +935,7 @@
       "rights": "ACC_READ",
       "size_bytes": -1,
       "subpools": [],
-      "used_size_bytes": 36116,
+      "used_size_bytes": 14740,
       "user_allocated": false,
       "virtual": false
     }

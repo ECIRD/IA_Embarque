@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete 8 resources" deleteContents="false" description="Delete 8 resources" element1="/IA_Embedded_Vf/X-CUBE-AI/App/app_x-cube-ai.c" element2="/IA_Embedded_Vf/X-CUBE-AI/App/model_v1_config.h" element3="/IA_Embedded_Vf/X-CUBE-AI/App/model_v1_data_params.c" element4="/IA_Embedded_Vf/X-CUBE-AI/App/model_v1_data_params.h" element5="/IA_Embedded_Vf/X-CUBE-AI/App/model_v1_data.c" element6="/IA_Embedded_Vf/X-CUBE-AI/App/model_v1_data.h" element7="/IA_Embedded_Vf/X-CUBE-AI/App/model_v1.c" element8="/IA_Embedded_Vf/X-CUBE-AI/App/model_v1.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="8" stamp="1742811404126"/>
+</session>

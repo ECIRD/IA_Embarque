@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    model_v1_data_params.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    2025-03-21T09:44:10+0100
+  * @date    2025-03-24T11:18:21+0100
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * Copyright (c) 2025 STMicroelectronics.
@@ -28,18 +28,18 @@
 
 
 #define AI_MODEL_V1_DATA_ACTIVATIONS_SIZES \
-  { 512, }
-#define AI_MODEL_V1_DATA_ACTIVATIONS_SIZE     (512)
+  { 384, }
+#define AI_MODEL_V1_DATA_ACTIVATIONS_SIZE     (384)
 #define AI_MODEL_V1_DATA_ACTIVATIONS_COUNT    (1)
-#define AI_MODEL_V1_DATA_ACTIVATION_1_SIZE    (512)
+#define AI_MODEL_V1_DATA_ACTIVATION_1_SIZE    (384)
 
 
 
 #define AI_MODEL_V1_DATA_WEIGHTS_SIZES \
-  { 36116, }
-#define AI_MODEL_V1_DATA_WEIGHTS_SIZE         (36116)
+  { 14740, }
+#define AI_MODEL_V1_DATA_WEIGHTS_SIZE         (14740)
 #define AI_MODEL_V1_DATA_WEIGHTS_COUNT        (1)
-#define AI_MODEL_V1_DATA_WEIGHT_1_SIZE        (36116)
+#define AI_MODEL_V1_DATA_WEIGHT_1_SIZE        (14740)
 
 
 
