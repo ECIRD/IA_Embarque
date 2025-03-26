@@ -167,3 +167,51 @@ Où TWF, HDF, PWF, OSF et RNF sont des types d'erreur de production.
 Notre but étant de prédire les maintenances, nous allons devoir prendre en compte les différents types de problèmes ainsi que les paramètres des machines au moment du problème et le type de produit pour essayer de trouver une corrélation.
 
 ## 2. Mise en place et analyse d'un modele d'IA
+
+### Analyse des Données et Création du Modèle
+
+Une fois nos données importées, nous avons procédé à une première analyse du lot qui nous était fourni afin d'établir la bonne approche pour créer notre modèle et l'entraîner correctement.
+
+![Distribution des Pannes](lien_vers_image_de_distribution_des_pannes)
+![Types d'Erreurs](lien_vers_image_des_différentes_fautes)
+
+#### Problèmes Identifiés
+
+La première observation est qu'une classe est largement majoritaire par rapport à l'autre. Cela implique qu'entraîner un modèle sur une base de données comme celle-ci aura tendance à biaiser les résultats. Le modèle risque de ne pas être performant dans ses prédictions. 
+
+Deuxièmement, les types d'erreurs sont aussi très inégaux. Ainsi, entraîner un modèle sur ce type de base de données pourrait conduire le modèle à identifier uniquement un type d'erreur. 
+
+Enfin, nous avions aussi un problème de **multi-labeling**. En effet, il pouvait y avoir plusieurs erreurs pour une seule et même machine. Étant donné que ces cas étaient minoritaires, nous avons préféré les supprimer afin d'éviter les problèmes liés au **multi-labeling**.
+
+#### Entraînement du Modèle
+
+En partant de ces observations, nous avons quand même essayé d'entraîner et de tester un modèle.
+
+![Courbe de Loss et Accuracy](lien_vers_courbe_loss_accuracy)
+
+D'après ces résultats, notre modèle semble tout bonnement parfait et ne présente aucune faille. Cependant, pour en être sûrs, nous avons étudié les matrices de confusion liées à chaque classe.
+
+![Matrice de Confusion](lien_vers_matrice_de_confusion)
+
+Nous avons alors remarqué que notre modèle prédit que toutes les machines vont soit dans la classe "oui", soit dans la classe "non", sans aucune nuance entre les deux. Cela signifie qu'il ne prédit pas vraiment, ou pas du tout. Le modèle a mal été entraîné et considère simplement que toutes les machines fonctionnent sans erreur, ou qu'elles ont toutes une erreur.
+
+#### Solutions Appliquées au Déséquilibre des Classes
+
+Pour pallier ce problème de déséquilibre des classes dans notre base d'entraînement, nous avons essayé deux méthodes afin d'équilibrer les classes.
+
+1. **SMOTE (Synthetic Minority Over-sampling Technique)** : Cette méthode permet de créer artificiellement des cas pour les classes minoritaires.
+2. **Undersampling** : Cette méthode consiste à réduire la taille des classes majoritaires.
+
+Ensuite, nous avons retesté notre modèle et avons obtenu des résultats bien différents.
+
+![Courbe de Loss et Accuracy après Équilibrage](lien_vers_courbe_loss_accuracy_équilibrée)
+
+Notre modèle obtient maintenant une accuracy bien moins parfaite qu'auparavant, avec notamment un peu d'overfitting. Pour vérifier la pertinence de notre équilibrage de classes, nous avons également visionné les matrices de confusion des classes, comme tout à l'heure.
+
+![Matrice de Confusion après Équilibrage](lien_vers_matrice_de_confusion_équilibrée)
+
+#### Conclusion
+
+Le résultat n'est toujours pas satisfaisant à 100%, mais notre modèle permet déjà de prédire un peu plus efficacement. En effet, il ne met plus toutes les machines dans la même catégorie. Il commence à essayer de les répartir de manière plus nuancée, même si cela ne correspond pas toujours parfaitement à la réalité. Le modèle commence réellement à faire des prédictions.
+
+Finalement, nous avons conservé ce modèle afin de tester la suite sur la carte, même s'il n'est clairement pas optimisé et qu'il mériterait encore quelques améliorations.
