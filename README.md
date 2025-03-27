@@ -226,19 +226,20 @@ Finalement, nous avons conservé ce modèle afin de tester la suite sur la carte
 
 Afin de mettre notre modèle sur CubeIDE, nous avons dû importer notre fichier `.h5` ainsi que nos données de test d'input et d'output. Ensuite, nous avons simplement envoyé le code sur la carte.
 
-[insérer image de cubeide avec peut etre des commentaires mais y a pas grande chose à dire mdr]
+![Graphe via CubeIDE](./Images/cubeide.png)
 
 ## 4. **Connexion UART**
 
 La connexion via UARTs'effectue à l'aide d'un script python appelé comm.py. Ce script permet la communication entre la carte et le pc mais surtout permet de lancer l'évaluation du modèle qui a été envoyé dans la carte.
 
-[image du code python]
+![Transmission via python](./Images/comm.png)
 
 
 ## 5. **Analyse des resultats**
 
 Une fois le code mis sur la carte on obtient cela comme résultat au bout de 100 itérations sur notre modèle : 
 
-[insérer images du résultat du terminal]
+![Premières itérations](./Images/debut_term.png)
+![Dernières itérations](./Images/fin_term.png)
 
 Pour notre accuraccy on obtient 70% à la fin comparé à notre valeur théorique sur google collab de 71% c'est tout à faire cohérent. On a donc un modèle de prédiction plutôt performant certes perfectible mais qui fonctionne sur une carte. On a pris un réseau de neurones peu conséquent avec un nombre de paramètres qui restent très raisonnable afin de garder une consommation d'énergie relativement faible, du moins, du mieux que l'on peut.
