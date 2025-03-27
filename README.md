@@ -239,9 +239,11 @@ La connexion via UARTs'effectue à l'aide d'un script python appelé comm.py. Ce
 
 Une fois le code mis sur la carte on obtient cela comme résultat au bout de 100 itérations sur notre modèle : 
 
+### **Début des itérations
+
 ![Premières itérations](./Images/debut_term.png)
 
-On voit l'évolution du modèle au fur et à mesure des itérations en partant de 0% jusqu'à l'accuraccy e 70%.
+### **Fin des itérations
 
 ![Dernières itérations](./Images/fin_term.png)
 
