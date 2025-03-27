@@ -230,7 +230,7 @@ Afin de mettre notre modèle sur CubeIDE, nous avons dû importer notre fichier 
 
 Le kit 32L4R9IDISCOVERY est une plateforme de démonstration et de développement complète pour le microcontrôleur STM32L4R9AI basé sur le cœur Arm® Cortex®-M4 de STMicroelectronics. Il met en avant les caractéristiques ultra-basse consommation et possède 640 Ko de RAM embarquée, ce qui correspond parfaitement à notre utilisation qui est un système de prédiction sur un système embarqué.
 
-![Transmission via python](./Images/carte_embarqué.png)
+![Photo du kit](./Images/carte_embarquee.png)
 
 ## 4. **Connexion UART**
 
