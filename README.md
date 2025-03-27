@@ -240,6 +240,9 @@ La connexion via UARTs'effectue à l'aide d'un script python appelé comm.py. Ce
 Une fois le code mis sur la carte on obtient cela comme résultat au bout de 100 itérations sur notre modèle : 
 
 ![Premières itérations](./Images/debut_term.png)
+
+On voit l'évolution du modèle au fur et à mesure des itérations en partant de 0% jusqu'à l'accuraccy e 70%.
+
 ![Dernières itérations](./Images/fin_term.png)
 
 Pour notre accuraccy on obtient 70% à la fin comparé à notre valeur théorique sur google collab de 71% c'est tout à faire cohérent. On a donc un modèle de prédiction plutôt performant certes perfectible mais qui fonctionne sur une carte. On a pris un réseau de neurones peu conséquent avec un nombre de paramètres qui restent très raisonnable afin de garder une consommation d'énergie relativement faible, du moins, du mieux que l'on peut.
