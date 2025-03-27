@@ -234,10 +234,14 @@ La connexion via UARTs'effectue à l'aide d'un script python appelé comm.py. Ce
 
 ![Transmission via python](./Images/comm.png)
 
+Le kit 32L4R9IDISCOVERY est une plateforme de démonstration et de développement complète pour le microcontrôleur STM32L4R9AI basé sur le cœur Arm® Cortex®-M4 de STMicroelectronics. Il met en avant les caractéristiques ultra-basse consommation et possède 640 Ko de RAM embarquée, ce qui correspond parfaitement à notre utilisation qui est un système de prédiction sur un système embarqué.
+
+![Transmission via python](./Images/carte_embarqué.png)
+
 
 ## 5. **Analyse des resultats**
 
-Une fois le code mis sur la carte on obtient cela comme résultat au bout de 100 itérations sur notre modèle : 
+Une fois le code mis sur la carte on obtient cela comme résultat en paramétrant 100 itérations sur notre modèle : 
 
 ### Début des itérations
 
