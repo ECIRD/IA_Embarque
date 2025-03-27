@@ -188,8 +188,8 @@ Enfin, nous avions aussi un problème de **multi-labeling**. En effet, il pouvai
 
 En partant de ces observations, nous avons quand même essayé d'entraîner et de tester un modèle.
 
-![Distribution des pannes](./Images/confusion1_0.png)
-![Distribution des pannes](./Images/confusion1_1.png)
+![Distribution des pannes](./Images/loss1.png)
+![Distribution des pannes](./Images/accuraccy1.png)
 
 D'après ces résultats, notre modèle semble tout bonnement parfait et ne présente aucune faille. Cependant, pour en être sûrs, nous avons étudié les matrices de confusion liées à chaque classe.
 
