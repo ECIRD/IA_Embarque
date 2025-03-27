@@ -167,3 +167,36 @@ Où TWF, HDF, PWF, OSF et RNF sont des types d'erreur de production.
 Notre but étant de prédire les maintenances, nous allons devoir prendre en compte les différents types de problèmes ainsi que les paramètres des machines au moment du problème et le type de produit pour essayer de trouver une corrélation.
 
 ## 2. Mise en place et analyse d'un modele d'IA
+
+Une fois nos données importées, nous avons procédé à une première analyse du lot qu'il nous était fourni afin d'établir la bonne approche pour créer notre modèle et l'entrainer correctement.
+
+![Distribution des pannes](./Images/distrib_panne.png)
+
+![Distribution des pannes](./Images/distrib_erreur.png)
+
+La première sera qu'une classe est largement majoritaire par rapport à l'autre cela implique qu'entrainer un modèle sur une base de données comme celle-ci aura tendance à biaiser le résultat. On aura un modèle qui ne sera pas vraiment performant dans les prédictions. Deuxièmement, dans les types d'erreurs, c'est très inégale aussi donc s'entrainer sur ce modèle pourrait aussi faire en sorte que le modèle s'entraine et finisse par repérer qu'un seul type d'erreur. Finalement, nous avions aussi un problème de multi-labeling car il pouvait y avoir plusieurs erreurs pour une seule et même machine, c'étaient des cas minoritaires donc nous avons préféré les enlever quand nous avions besoin d'éviter le cas du multi-labeling. 
+
+En partant de cela, nous avons quand même essayer d'entrainer et de tester un modèle.
+
+![Distribution des pannes](./Images/accuraccy1.png)
+
+![Distribution des pannes](./Images/loss1.png)
+
+D'après ces résultats, notre modèle semble tout bonnement parfait et ne présente aucune faille, mais pour en être sur nous avons étudié les matrice de confusion liées à chaque classe.
+
+![Distribution des pannes](./Images/confusion1_0.png)
+![Distribution des pannes](./Images/confusion1_1.png)
+
+On remarque alors que notre modèle prédit que toutes les machines vont soit dans le oui, soit le non, mais sans nuance entre les deux, cela veut dire qu'il ne prédit pas vraiment, même pas du tout. Il a mal était entrainé et considère juste que soit toutes les machines marches sans l'erreur, soit qu'elles ont toutes l'erreurs.
+
+Pour palier à ce problème de déséquilibre des classes de notre base d'entrainement, nous avons essayé d'utiliser deux méthodes afin de balancer tout cela.
+La première était l'utilisation de la fonction smote qui permettait de créer artificiellement des cas pour les classes minoritaies. La deuxième était l'utilisation d'undersampling afin de réduire la taille des classes qui justement était bien plus majoritaire.
+Ensuite nous avons retesté notre modèle et avons obtenu des résultats bien différents.
+[insérer courbe accuraccy loss]
+Notre modèle obtient maintenant une accuraccy bien moins parfaite que précemment avec notamment un peu d'overfitting. Pour vérifier la pertinence de notre équilibrage de classe, nous avons aussi visonner les matrice de confusion des classes comme tout à l'heure.
+
+![Distribution des pannes](./Images/confusion2_1.png)
+![Distribution des pannes](./Images/confusion2_0.png)
+
+Le résultat n'est toujours pas satisfaisant à 100% mais notre modèle permet déjà de prédire un peu plus. En effet, il ne met plus bêtement toutes les machines dans le même panier, il essaie réellement de les répartir, même si cela ne correspond pas toujours avec la réalité, le modèle commence à essayer de prédire.
+Finalement, nous avons garder ce modèle afin de tester la suite sur la carte même s'il n'est clairement pas otpimisé et mériterait qu'on s'y penche encore un peu dessus.
