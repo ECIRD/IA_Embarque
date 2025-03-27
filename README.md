@@ -253,3 +253,5 @@ Une fois le code mis sur la carte on obtient cela comme résultat en paramétran
 ![Dernières itérations](./Images/fin_term.png)
 
 Pour notre accuraccy on obtient 70% à la fin comparé à notre valeur théorique sur google collab de 71% c'est tout à faire cohérent. On a donc un modèle de prédiction plutôt performant certes perfectible mais qui fonctionne sur une carte. On a pris un réseau de neurones peu conséquent avec un nombre de paramètres qui restent très raisonnable afin de garder une consommation d'énergie relativement faible, du moins, du mieux que l'on peut.
+
+Les pistes d'améliorations seront de réduire l'overfitting de notre modèle comme on a pu le constater sur le google collab en théorie. Nous pouvons aussi améliorer notre accuracy car même si 70% c'est plutôt élevée, c'est largement améliorable. De plus, l'équilibre des classes dans notre base de données pourrait aussi être revu afin de l'optimiser et ainsi éviter que certaines classes soient moins bien évaluées par notre modèle.
