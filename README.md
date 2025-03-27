@@ -167,3 +167,78 @@ Où TWF, HDF, PWF, OSF et RNF sont des types d'erreur de production.
 Notre but étant de prédire les maintenances, nous allons devoir prendre en compte les différents types de problèmes ainsi que les paramètres des machines au moment du problème et le type de produit pour essayer de trouver une corrélation.
 
 ## 2. Mise en place et analyse d'un modele d'IA
+
+### Analyse des Données et Création du Modèle
+
+Une fois nos données importées, nous avons procédé à une première analyse du lot qui nous était fourni afin d'établir la bonne approche pour créer notre modèle et l'entraîner correctement.
+
+![Distribution des pannes](./Images/distrib_panne.png)
+
+![Distribution des pannes](./Images/distrib_erreur.png)
+
+#### Problèmes Identifiés
+
+La première observation est qu'une classe est largement majoritaire par rapport à l'autre. Cela implique qu'entraîner un modèle sur une base de données comme celle-ci aura tendance à biaiser les résultats. Le modèle risque de ne pas être performant dans ses prédictions. 
+
+Deuxièmement, les types d'erreurs sont aussi très inégaux. Ainsi, entraîner un modèle sur ce type de base de données pourrait conduire le modèle à identifier uniquement un type d'erreur. 
+
+Enfin, nous avions aussi un problème de **multi-labeling**. En effet, il pouvait y avoir plusieurs erreurs pour une seule et même machine. Étant donné que ces cas étaient minoritaires, nous avons préféré les supprimer afin d'éviter les problèmes liés au **multi-labeling**.
+
+#### Entraînement du Modèle
+
+En partant de ces observations, nous avons quand même essayé d'entraîner et de tester un modèle.
+
+![Distribution des pannes](./Images/confusion1_0.png)
+![Distribution des pannes](./Images/confusion1_1.png)
+
+D'après ces résultats, notre modèle semble tout bonnement parfait et ne présente aucune faille. Cependant, pour en être sûrs, nous avons étudié les matrices de confusion liées à chaque classe.
+
+
+![Distribution des pannes](./Images/confusion1_0.png)
+![Distribution des pannes](./Images/confusion1_1.png)
+
+Nous avons alors remarqué que notre modèle prédit que toutes les machines vont soit dans la classe "oui", soit dans la classe "non", sans aucune nuance entre les deux. Cela signifie qu'il ne prédit pas vraiment, ou pas du tout. Le modèle a mal été entraîné et considère simplement que toutes les machines fonctionnent sans erreur, ou qu'elles ont toutes une erreur.
+
+#### Solutions Appliquées au Déséquilibre des Classes
+
+Pour pallier ce problème de déséquilibre des classes dans notre base d'entraînement, nous avons essayé deux méthodes afin d'équilibrer les classes.
+
+1. **SMOTE (Synthetic Minority Over-sampling Technique)** : Cette méthode permet de créer artificiellement des cas pour les classes minoritaires.
+2. **Undersampling** : Cette méthode consiste à réduire la taille des classes majoritaires.
+
+Ensuite, nous avons retesté notre modèle et avons obtenu des résultats bien différents.
+
+![Distribution des pannes](./Images/loss2.png)
+![Distribution des pannes](./Images/accuraccy2.png)
+
+Notre modèle obtient maintenant une accuracy bien moins parfaite qu'auparavant, avec notamment un peu d'overfitting. Pour vérifier la pertinence de notre équilibrage de classes, nous avons également visionné les matrices de confusion des classes, comme tout à l'heure.
+
+![Distribution des pannes](./Images/confusion2_1.png)
+![Distribution des pannes](./Images/confusion2_0.png)
+
+#### Conclusion
+
+Le résultat n'est toujours pas satisfaisant à 100%, mais notre modèle permet déjà de prédire un peu plus efficacement. En effet, il ne met plus toutes les machines dans la même catégorie. Il commence à essayer de les répartir de manière plus nuancée, même si cela ne correspond pas toujours parfaitement à la réalité. Le modèle commence réellement à faire des prédictions.
+
+Finalement, nous avons conservé ce modèle afin de tester la suite sur la carte, même s'il n'est clairement pas optimisé et qu'il mériterait encore quelques améliorations.
+
+## 3. Implémentation sous Cube IDE
+
+Afin de mettre notre modèle sur CubeIDE, nous avons dû importer notre fichier `.h5` ainsi que nos données de test d'input et d'output. Ensuite, nous avons simplement envoyé le code sur la carte.
+
+[insérer image de cubeide avec peut etre des commentaires mais y a pas grande chose à dire mdr]
+
+## 4. **Connexion UART**
+
+La connexion via UARTs'effectue à l'aide d'un script python appelé comm.py. Ce script permet la communication entre la carte et le pc mais surtout permet de lancer l'évaluation du modèle qui a été envoyé dans la carte.
+
+[image du code python]
+
+
+## 5. **Analyse des resultats**
+
+Une fois le code mis sur la carte on obtient cela comme résultat au bout de 100 itérations sur notre modèle : 
+
+[insérer images du résultat du terminal]
+
+Pour notre accuraccy on obtient 70% à la fin comparé à notre valeur théorique sur google collab de 71% c'est tout à faire cohérent. On a donc un modèle de prédiction plutôt performant certes perfectible mais qui fonctionne sur une carte. On a pris un réseau de neurones peu conséquent avec un nombre de paramètres qui restent très raisonnable afin de garder une consommation d'énergie relativement faible, du moins, du mieux que l'on peut.
